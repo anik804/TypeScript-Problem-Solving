@@ -4,8 +4,6 @@
 
 TypeScript offers two ways to define custom types: `interface` and `type`. While they can often be used interchangeably, there are key differences that affect how you model your data and extend types.
 
-### ✅ Similarities
-
 Both can describe the shape of an object:
 
 ```ts
