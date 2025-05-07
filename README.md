@@ -49,8 +49,13 @@ type Bike = {
   color: string;
 };
 
+---
+
 ### Topic 2: The use of 'keyof' Keyword in TypeScript
 
+#### The `keyof` keyword is a **type operator** that returns a union of the property names of a given type. It is useful when you want to ensure that the keys you use to access an object are valid keys of that object.
+
+```ts
 // Defining a sample type
 type Person = {
   name: string;
@@ -74,8 +79,3 @@ console.log(userName); // Output: Alice
 
 // Invalid usage with a non-existent key (compile-time error)
 // const invalid = getProperty(user, 'salary'); // ❌ Error: "salary" is not a key of Person
-
-### ============================================================================
-// Final Output: This program demonstrates both interfaces and types in TypeScript, 
-// as well as how the 'keyof' operator can help us with type safety for object properties.
-### ============================================================================
