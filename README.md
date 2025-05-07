@@ -1,8 +1,23 @@
 ## 🎯 Interview Questions - Blog Task
 
-### ============================================================================
 ### Topic 1: Differences Between Interfaces and Types in TypeScript
-### ============================================================================
+
+TypeScript offers two ways to define custom types: `interface` and `type`. While they can often be used interchangeably, there are key differences that affect how you model your data and extend types.
+
+### ✅ Similarities
+
+Both can describe the shape of an object:
+
+```ts
+interface User {
+  name: string;
+  age: number;
+}
+
+type UserType = {
+  name: string;
+  age: number;
+};
 
 interface UserInterface {
   name: string;
@@ -34,9 +49,7 @@ type Bike = {
   color: string;
 };
 
-### ============================================================================
 ### Topic 2: The use of 'keyof' Keyword in TypeScript
-### ============================================================================
 
 // Defining a sample type
 type Person = {
@@ -62,7 +75,7 @@ console.log(userName); // Output: Alice
 // Invalid usage with a non-existent key (compile-time error)
 // const invalid = getProperty(user, 'salary'); // ❌ Error: "salary" is not a key of Person
 
-// ============================================================================
+### ============================================================================
 // Final Output: This program demonstrates both interfaces and types in TypeScript, 
 // as well as how the 'keyof' operator can help us with type safety for object properties.
-// ============================================================================
+### ============================================================================
