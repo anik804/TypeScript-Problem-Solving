@@ -1,1 +1,68 @@
-# TypeScript-Problem-Solving
+## 🎯 Interview Questions - Blog Task
+
+// ============================================================================
+// Topic 1: Differences Between Interfaces and Types in TypeScript
+// ============================================================================
+
+interface UserInterface {
+  name: string;
+  age: number;
+}
+
+type UserType = {
+  name: string;
+  age: number;
+};
+
+// Demonstrating Declaration Merging with Interface
+interface Car {
+  wheels: number;
+}
+
+interface Car {
+  color: string;
+}
+
+const myCar: Car = {
+  wheels: 4,
+  color: 'red',
+};
+
+// Type cannot be merged like this
+type Bike = {
+  wheels: number;
+  color: string;
+};
+
+// ============================================================================
+// Topic 2: The use of 'keyof' Keyword in TypeScript
+// ============================================================================
+
+// Defining a sample type
+type Person = {
+  name: string;
+  age: number;
+  job?: string; // optional property
+};
+
+// keyof creates a union of property names of the type
+type PersonKeys = keyof Person;  // "name" | "age" | "job"
+
+// Using keyof in a function to access object properties
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+const user: Person = { name: 'Alice', age: 30 };
+
+// Valid usage with keyof
+const userName = getProperty(user, 'name'); // ✅ Type is string
+console.log(userName); // Output: Alice
+
+// Invalid usage with a non-existent key (compile-time error)
+// const invalid = getProperty(user, 'salary'); // ❌ Error: "salary" is not a key of Person
+
+// ============================================================================
+// Final Output: This program demonstrates both interfaces and types in TypeScript, 
+// as well as how the 'keyof' operator can help us with type safety for object properties.
+// ============================================================================
